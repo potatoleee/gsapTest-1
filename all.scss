@@ -1,0 +1,41 @@
+img{
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+.banner{
+    background-image: url("./images/DSCF4934.JPG");
+    background-size: cover;
+    height: 100vh;
+}
+nav{
+    z-index: 100;
+    border-bottom: 1px solid white;
+}
+
+.logo{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+
+}
+.circle-wrap{
+    height: 300vh;//可以調整這裡 改變滑動的距離
+}
+.circle-content{
+    height: 100vh;
+    position: sticky;
+    top: 0;//要給他位置
+    left: 0;
+}
+.circle{
+    border-radius: 35em;
+    width: 35em;
+    height: 35em;
+    object-fit: cover;
+}
+.section2{
+    height: 100vh;
+    background: #000;
+}
