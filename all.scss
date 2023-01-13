@@ -39,3 +39,51 @@ nav{
     height: 100vh;
     background: #000;
 }
+
+.video-wrap{
+    height: 300vh;//可以調整這裡 改變滑動的距離
+    position: relative;
+}
+.video-content{
+    height: 100vh;
+    position: sticky;
+    top: 0;//要給他位置
+    left: 0;
+}
+.videoCanvas{
+    border-radius: 35em;
+    width: 35em;
+    height: 35em;
+    object-fit: cover;
+}
+
+// .videoBox{
+//     position: relative;
+//     width: 100%;
+//     height: 0;
+//     padding-bottom: 50%;
+
+//     video{
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//     }
+// }
+
+.app {
+    align-self: center;
+    margin: auto;
+  }
+  
+  
+  
+  
+  
+//   video {
+//        width: 40vw;
+//        height: 40vw / 16 * 9;
+//   }
+  
+  

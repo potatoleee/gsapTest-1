@@ -45,4 +45,30 @@ nav {
 .section2 {
   height: 100vh;
   background: #000;
+}
+
+.video-wrap {
+  height: 300vh;
+  position: relative;
+}
+
+.video-content {
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.videoCanvas {
+  border-radius: 35em;
+  width: 35em;
+  height: 35em;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.app {
+  align-self: center;
+  margin: auto;
 }/*# sourceMappingURL=all.css.map */
