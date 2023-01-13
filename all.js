@@ -26,7 +26,7 @@ $(".banner").each(function (index) {
   });
 
 //sticky circle To
-$(".circle-content").each(function (index) {
+$(".circle-wrap").each(function (index) {
     let triggerElement = $(this);
     let targetElement = $(".circle");
   
@@ -56,7 +56,56 @@ $(".circle-content").each(function (index) {
   });
 
   //canvasvideo circle To
-$(".video-content").each(function (index) {
+// $(".video-content").each(function (index) {
+//     let triggerElement = $(this);
+//     let targetElement = $(".videoCanvas");
+  
+//     let tl = gsap.timeline({
+//       scrollTrigger: {
+//         trigger: triggerElement,
+//         // trigger element - viewport
+//         start: "top top",
+//         end: "bottom top",
+//         scrub: true
+//       }
+//     });
+//     tl.fromTo(targetElement, {
+//         //從圓形
+//         width: "35em",
+//         height: "35em",
+//         borderRadius:"35em",
+//         duration:1
+//       },
+//       { //到滿版
+//         width: "90vw",
+//         height: "90vh",
+//         borderRadius:"0em",
+//         duration:1
+//       },
+//     // tl.to(targetElement,{
+//     //     width: "50em",
+//     //     height: "50em",
+//     //     borderRadius:"35em",
+//     //     duration:1
+//     // }).to(targetElement,{
+//     //     width: "90vw",
+//     //     height: "90vh",
+//     //     borderRadius:"0em",
+//     //     duration:2
+//     // }).to(targetElement,{
+//     //     width: "35vw",
+//     //     height: "35vh",
+//     //     borderRadius:"35em",
+//     //     duration:2
+//     // })
+      
+
+//     );
+//   });
+
+    //小大小測試To
+    //最外層用最大的範圍去判斷
+$(".video-wrap").each(function (index) {
     let triggerElement = $(this);
     let targetElement = $(".videoCanvas");
   
@@ -69,20 +118,26 @@ $(".video-content").each(function (index) {
         scrub: true
       }
     });
-    tl.fromTo(targetElement, {
-        //從圓形
-        width: "35em",
-        height: "35em",
-        borderRadius:"35em",
-        duration:1
-      },
-      { //到滿版
+   
+    tl.to(targetElement,{
+        width: "90vw",
+        height: "90vh",
+        borderRadius:"0em",
+        duration:20
+    }).to(targetElement,{
         width: "100vw",
         height: "100vh",
         borderRadius:"0em",
-        duration:1
-      }
-    );
+        duration:10
+    }).to(targetElement,{
+        width: "10vw",
+        height: "50vh",
+        borderRadius:"0em",
+        duration:20
+    })
+      
+
+    
   });
 
 
@@ -131,50 +186,50 @@ $(".circle-wrap").each(function (index) {
 
 // Source href="http://html5doctor.com/video-canvas-magic/
 
-document.addEventListener('DOMContentLoaded', function(){
-    var v = document.getElementById('video');
-    var canvas = document.getElementById('canvas');
-    var context = canvas.getContext('2d');
-    var intervalRewind;
+// document.addEventListener('DOMContentLoaded', function(){
+//     var v = document.getElementById('video');
+//     var canvas = document.getElementById('canvas');
+//     var context = canvas.getContext('2d');
+//     var intervalRewind;
   
-    v.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/967302/Outdoor-Camping-zip.mp4";
-    v.crossorigin = "anonymous";
-    v.type = "video/mp4";
+//     v.src = "https://s3-us-west-2.amazonaws.com/s.cdpn.io/967302/Outdoor-Camping-zip.mp4";
+//     v.crossorigin = "anonymous";
+//     v.type = "video/mp4";
   
      
-    var cw = v.clientWidth;
-    var ch = v.clientHeight;
-    v.style.width = `${v.clientWidth}px`;
-    v.style.height = `${v.clientHeight}px`;
-    canvas.width = cw;
-    canvas.height = ch;
-    v.crossOrigin = "Anonymous";
+//     var cw = v.clientWidth;
+//     var ch = v.clientHeight;
+//     v.style.width = `${v.clientWidth}px`;
+//     v.style.height = `${v.clientHeight}px`;
+//     canvas.width = cw;
+//     canvas.height = ch;
+//     v.crossOrigin = "Anonymous";
     
      
-    v.addEventListener('play', function(){
-        draw(this, context, cw, ch);
+//     v.addEventListener('play', function(){
+//         draw(this, context, cw, ch);
   
-    }, false);
+//     }, false);
   
     
-  }, false);
+//   }, false);
   
   
   
   
-  function draw(v, c, w, h) {
-    if(v.paused || v.ended) {
-      return false; 
-    }
-    c.drawImage(v, 0, 0, w, h);
+//   function draw(v, c, w, h) {
+//     if(v.paused || v.ended) {
+//       return false; 
+//     }
+//     c.drawImage(v, 0, 0, w, h);
     
-     let pix = c.getImageData(0, 0, 1, 1).data;
+//      let pix = c.getImageData(0, 0, 1, 1).data;
      
-     let updateBgColor = 'rgb(' + pix[0] + ',' + pix[1] + ',' + pix[2] + ')';
-    //  document.body.style.backgroundColor = updateBgColor;
+//      let updateBgColor = 'rgb(' + pix[0] + ',' + pix[1] + ',' + pix[2] + ')';
+//     //  document.body.style.backgroundColor = updateBgColor;
   
      
-    setTimeout(draw, 1, v, c, w, h);
-  }
+//     setTimeout(draw, 1, v, c, w, h);
+//   }
   
   

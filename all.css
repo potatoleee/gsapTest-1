@@ -48,7 +48,7 @@ nav {
 }
 
 .video-wrap {
-  height: 300vh;
+  height: 1000vh;
   position: relative;
 }
 
@@ -61,7 +61,6 @@ nav {
 }
 
 .videoCanvas {
-  border-radius: 35em;
   width: 35em;
   height: 35em;
   -o-object-fit: cover;
