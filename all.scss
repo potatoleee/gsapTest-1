@@ -15,10 +15,8 @@ nav{
 
 .logo{
     position: absolute;
-    top:50%;
     left: 50%;
-    transform: translate(-50%,-50%);
-
+    transform: translateX(-50%);
 }
 .circle-wrap{
     height: 300vh;//可以調整這裡 改變滑動的距離

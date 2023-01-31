@@ -5,25 +5,47 @@ ScrollTrigger.defaults({
 });
 
 // Animate From
-$(".banner").each(function (index) {
-    let triggerElement = $(this);
-    let targetElement = $(".logo");
+// $(".banner").each(function (index) {
+//     let triggerElement = $(this);
+//     let targetElement = $(".logo");
   
-    let tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: triggerElement,
-        // trigger element - viewport
-        start: "top top",
-        end: "bottom top",
-        scrub: 1
-      }
+//     let tl = gsap.timeline({
+//       scrollTrigger: {
+//         trigger: triggerElement,
+//         // trigger element - viewport
+//         start: "top top",
+//         end: "bottom top",
+//         scrub: 1
+//       }
+//     });
+//     tl.from(targetElement, {
+//       width: "90%",
+//       y:"85vh",
+//       duration: 1
+//     });
+//   });
+//logo從下往上效果
+$(".video-wrap").each(function (index) {
+      let triggerElement = $(this);
+      let targetElement = $(".logo");
+    
+      let tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: triggerElement,
+          // trigger element - viewport
+          start: "top top",
+          end: "bottom top",
+          scrub: 1
+        }
+      });
+      tl.from(targetElement, {
+        width: "90%",
+        y:"85vh",
+        duration: 1,
+        opacity:0.3,
+        
+      });
     });
-    tl.from(targetElement, {
-      width: "90%",
-      y:"-70%",
-      duration: 1
-    });
-  });
 
 //sticky circle To
 $(".circle-wrap").each(function (index) {
@@ -130,8 +152,8 @@ $(".video-wrap").each(function (index) {
         borderRadius:"0em",
         duration:10
     }).to(targetElement,{
-        width: "10vw",
-        height: "50vh",
+        width: "10vmin",
+        height: "50vmin",
         borderRadius:"0em",
         duration:20
     })
